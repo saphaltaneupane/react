@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-   Iam learning js  
+  <h1>Iam learning js </h1>  
 </body>
 <script>
         // let a=34;  modern javascript var ma euta variable can be define  again 
@@ -21,5 +21,65 @@
         function hello(){
            console.log("hey saphalta"); 
         }
+        let c={
+            name:"saphalta",
+            age:22 ,
+            isActive:true,
+            func: function(){
+                console.log("this is a functions");
+            }
+        }
+
+        document.addEventListener("click ",function(){  
+            console.log("you clicked on the document");
+            // alert("you clicked on the document");
+            let conf=confirm("are you sure you want to continue?");
+            console.log(conf);
+        });
+         let arr=[34,57,5666];
+        console.log(arr);
+    for(let i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+        // for of loop
+        for(let value of arr){
+            console.log(value);
+        }
+        // for in loop
+        for(let index in arr){
+            console.log(index);
+        }
+        // while loop
+        let i=0;
+        while(i<arr.length){
+            console.log(arr[i]);
+            i++;
+        }
+        arr.forEach(function(value,index){
+            console.log(value,index);
+        });
+
+        // "use strict";
+        d=98; // this will throw an error because d is not defined
+        console.log(d); // this will not execute
+
+        let arr2=[34,21,23];
+        console.log(this); 
+        // this will throw an error because this is not defined in strict mode
+        let myfuc=(number=> {
+            console.log("this is an arrow function"+this);
+
+            
+        });
+        myfunc();// window object in non-strict mode, undefined in strict mode
+        setTimeout(function(){
+            console.log("this is a timeout function");
+        },2000);
+        //this is a timeout function that will execute after 2 seconds
+        //but other code will execute before that
+        console.log("this is a normal function");
+        //callback function will execute after 2 seconds
+        //this is a normal function that will execute immediately       
+        
     </script>
 </html>
