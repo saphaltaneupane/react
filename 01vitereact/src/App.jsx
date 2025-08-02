@@ -2,14 +2,18 @@ import React from 'react'
 import Chai from './chai'
 import Saphalta from './saphalta'
 
+
+
 function App() {
-  // return <h1>Chai aur react with vite</h1>
+  const username = "hello i am username"
 
-// return<><Saphalta /></>
-  
-  return<><Chai /></> 
-
-  //one element only exported from a file so keeping it inside div it is caled fragment 
+  return (
+    <>
+      <h1>Chai aur react with vite {username}</h1>
+      <Saphalta />
+      <Chai />
+    </>
+  )
 }
 
 export default App

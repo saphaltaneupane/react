@@ -1,22 +1,32 @@
-function customRender(reactElement, container){
-    const domElement = document.createElement(reactElement.type)
-    domElement.innerHTML=reactElement.children
-    domElement.setAttribute('href', reactElement.props.href )
-    domElement.setAttribute('target', reactElement.props.target)
-    container.appendChild(domElement)
+
+function customRender(reactElement, container) {
+//     const domElement = document.createElement(reactElement.type);
+//     domElement.innerHTML = reactElement.children;
+//     domElement.setAttribute('href', reactElement.props.href);
+//     domElement.setAttribute('target', reactElement.props.target);
+//     container.appendChild(domElement);
+//     // This function creates a DOM element based on the reactElement and appends it to the container
+
+const domElement =document.createElement(reactElement.type);
+domElement.innerHTML = reactElement.children;
+for (const prop in reactElement.props) {
+   if(prop=='children') {
+       continue;
+   }
+   domElement.setAttribute(prop, reactElement.props[prop]);
 }
-
-
-const reactElement = {
-    type: 'a',
-    props: {
+container.appendChild(domElement);
+}
+const reactElement={
+    type:'a',
+    props:{
         href:'https://ww.google.com',
-        target:'_blank'
+        target:'_blank',
+
     },
-   children:'Click me to visit Google' 
+    children:'Click me to visit Google'
+    
 }
-
-
-const mainContainer = document.querySelector('#root')
-
-customRender(reactElement, mainContainer)
+ const mainContainer= document.querySelector('#root')
+customRender(reactElement,mainContainer) 
+ //reactElement is injected in mainContainer
