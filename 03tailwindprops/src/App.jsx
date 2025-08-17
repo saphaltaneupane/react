@@ -2,43 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
-
+import Card from './components/Card'
 import './App.css'
 
 function App() {
   // const [count, setCount] = useState(0)
+// let myobj = { 
+//   username:"saphalta",
+//   age:22
+// }
 
+let newArr=[1,2,3,4,5,6,7,8,9,10];
   return (
     <>
       <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind test</h1>
-        <div className="flex flex-col rounded-xl  p-4"
-        style={{
-          border: '0.88px solid',
-  
-          backdropFilter: 'saturate(180%) blur(14px)',
-          background: ' #ffffff0d',
-        }}
-      >
-        <div>
-          <img
-            src="https://res.cloudinary.com/ddcg0rzlo/image/upload/v1652470298/9StaF0UBJfih_df0248.gif"
-            alt="nft-gif"
-            width="400"
-            height="400"
-            className="rounded-xl"
-          />
-        </div>
-        <div className="flex flex-col  rounded-b-xl py-4 ">
-          <div className="flex justify-between">
-            <h1 className="font-RubikBold ">Bored ape nft accidental</h1>
-            <h1 className="font-bold font-RubikBold">Price</h1>
-          </div>
-          <div className="flex  justify-between font-mono">
-            <p>#345</p>
-            <p>0.01</p>
-          </div>
-        </div>
-      </div>
+      <Card username="chai aur code" someObje-={newArr} btnText = "cluck me"/> 
+       <Card username="saphalta" btnText="vist me" /> 
 </>
     
   )
