@@ -1,15 +1,15 @@
 
 import Hello from "./components/Hello";
-
+import Fruits from "./components/Fruits";
+import ConditionalComponent from "./components/ConditionalComponent";
 
 function App() {
-const seatNumbers=[1,4,7];
 
-const person={name:"Rob",message:"hI there",seatNumbers:seatNumbers};
+
+
   return (
     <>
-  <Hello person={person} />
-
+      <ConditionalComponent />
     </>
   )
 }

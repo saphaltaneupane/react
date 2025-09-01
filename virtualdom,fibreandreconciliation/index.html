@@ -35,5 +35,22 @@ Components can be written like this too
 
    {/* here passing string to the props but can pass array too */}
     <Hello name="Mike" />
-
+const seatNumbers=[1,4,7];
      <Hello name="Rob"  message="hI there" seatNumbers={seatNumbers}/>
+
+
+     
+const person={name:"Rob",message:"hI there",seatNumbers:seatNumbers};
+  <Hello person={person} />
+  for objects we can pass the entire object as a prop 
+  props.person.name like this to access the object properties in the component file
+
+     <ul> {fruits.map(fruit=><li key={fruit}>{fruit}</li>)}</ul>
+
+
+
+
+      <li key={fruit.name}>
+                    {fruit.emoji} {fruit.name} - ${fruit.price}
+                </li>
+            ))}
