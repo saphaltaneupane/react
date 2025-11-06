@@ -17,7 +17,6 @@ export default function BasicForm() {
           onSubmit={formik.handleSubmit} // handleSubmit runs onSubmit above
           className="max-w-sm mx-auto mt-10 flex flex-col gap-4"
         >
-          {/* Email Input Field */}
           <input
             type="email"
             name="email"
@@ -27,7 +26,6 @@ export default function BasicForm() {
             className="p-2 border"
           />
 
-          {/* Password Input Field */}
           <input
             type="password"
             name="password"
@@ -37,7 +35,6 @@ export default function BasicForm() {
             className="p-2 border"
           />
 
-          {/* Submit Button */}
           <button type="submit" className="bg-blue-600 text-white p-2 rounded">
             Submit
           </button>
