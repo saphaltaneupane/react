@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { create } from "zustand";
 
-function App() {
-  const [count, setCount] = useState(0)
+const useStore = create((set) => ({
+  count: 0,
+  username: "Saphalta",
+  increment: () => set((s) => ({ count: s.count + 1 })),
+  changeName: (name) => set({ username: name }),
+}));
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function CountDisplay() {
+  const count = useStore((state) => state.count);
+  console.log("CountDisplay rendered");
+  return <div>Count: {count}</div>;
 }
 
-export default App
+function NameDisplay() {
+  const username = useStore((state) => state.username);
+  console.log("NameDisplay rendered");
+  return <div>Username: {username}</div>;
+}
+
+function Buttons() {
+  const { increment, changeName } = useStore();
+  return (
+    <>
+      <button onClick={increment}>Increase Count</button>
+      <button onClick={() => changeName("NepalUser")}>Change Name</button>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <CountDisplay />
+      <NameDisplay />
+      <Buttons />
+    </>
+  );
+}
+
+export default App;
